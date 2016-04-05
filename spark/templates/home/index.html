@@ -1,0 +1,208 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Speedy Meety</title>
+
+    <!-- Bootstrap Core CSS -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/bootstrap.min.css' %}"/>
+
+    <!-- Custom CSS -->
+    <!--<link href="css/scrolling-nav.css" rel="stylesheet">-->
+    <link rel="stylesheet" type="text/css" href="{% static 'home/css/scrolling-nav.css' %}"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<!-- The #page-top ID is part of the scrolling feature - the data-spy and data-target are part of the built-in Bootstrap scrollspy function -->
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+
+<!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand page-scroll" href="#page-top">Speedy Meety</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+
+                <li class="hidden">
+                    <a class="page-scroll" href="#page-top"></a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#about">About</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#reference">Reference</a>
+                </li>
+                <li>
+                    <a class="page-scroll" href="#tips">Meeting Tips</a>
+                </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+<!-- Intro Section -->
+<section id="intro" class="intro-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="featurette-title">Speedy Meety</h1>
+                <h2 class="featurette-subtitle">a more efficient meeting experience</h2>
+                <a class="btn btn-default page-scroll" href="#about">Learn more!</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+    <div class="container">
+        <div class="row">
+            <img class="featurette-image img-circle img-responsive pull-right"
+                 src="{% static 'home/images/spark_logo.png' %}">
+            <h2 class="featurette-heading">About <span class="text-muted">Speedy Meety</span></h2>
+
+            <!--<p class="lead text-left">Are you constantly in meetings that run past a scheduled end time? Do you find-->
+            <!--that meetings are scheduled longer than necessary?-->
+            <!--</p>-->
+
+            <p class="lead text-left">Do you find yourself in meetings that are scheduled longer than necessary? Most
+                colleagues will exchange more information with one another in a quick hallway conversation than in a
+                scheduled meeting. Speedy Meety is the way to have a quick and purposeful "hallway conversation" with
+                people around the globe.
+            </p>
+
+            <p class="featurette-subtitle text-left">Speedy Meety's Features</p>
+
+            <ul>
+                <li class="lead text-left">Easily set the length of a meeting based on an efficient length of time,
+                    rather than a standard 30 or 60 minute time slot.
+                </li>
+                <li class="lead text-left">Provide multiple topics and Speedy Meety will evenly divide the time
+                    among them to form an agenda.
+                </li>
+                <li class="lead text-left">Receive a text transcription of the meeting's voice conversation to review
+                    any information that was shared.
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</section>
+
+<!-- Reference Section -->
+<section id="reference" class="reference-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="featurette-heading">Reference</h2>
+
+                <table class="table table-bordered table-striped">
+                    <tr>
+                        <th class="col-xs-6 col-sm-5 col-md-4">Command</th>
+                        <th class="col-xs-6 col-sm-7 col-md-8">Description</th>
+                    </tr>
+                    <tr>
+                        <td><code>/meet5 <strong class="black-font">Cycling, Running, ...</strong></code></td>
+                        <td><strong>Topics:</strong> Provide a list of topics separated by commas</td>
+                    </tr>
+                    <tr>
+                        <td><code>/meet<strong class="black-font">8</strong> Baseball, Football</code></td>
+                        <td><strong>Meeting Length:</strong> Set the meeting length (Range 1 - 30)</td>
+                    </tr>
+                    <tr>
+                        <td><code>/meet<strong class="black-font">!</strong> Movies, TV Shows, Music</code></td>
+                        <td><strong>Automatic Meeting Length:</strong> Automatically sets the meeting length within the
+                            current 30 minute time slot
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>/meet<strong class="black-font">?</strong></code></td>
+                        <td><strong>Greeting/Help:</strong> Display Speedy Meety's greeting message which includes the
+                            link to this web page
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><code>/next</code></td>
+                        <td>Skip to the next topic. <em>Only available while a meeting is in progress</em></td>
+                    </tr>
+                    <tr>
+                        <td><code>/status</code></td>
+                        <td>Display the status of the current topic. <em>Only available while a meeting is in
+                            progress</em></td>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Meeting Tips Section -->
+<section id="tips" class="tips-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-1 col-sm-2 col-md-3 col-lg-3"></div>
+
+            <div class="col-xs-10 col-sm-8 col-md-6 col-lg-6">
+                <h2 class="featurette-heading">Meeting Tips</h2>
+
+                <ul>
+                    <li class="lead">List important topics closer to the beginning</li>
+                    <li class="lead">Allow one person to speak at a time for a more efficient discussion and higher
+                        accuracy of transcription
+                    </li>
+                    <li class="lead">Have a fun "rapid-fire" style discussion by setting up a shorter meeting
+                        with multiple topics
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- jQuery -->
+<!--<script src="js/jquery.js"></script>-->
+<script src="{% static 'home/js/jquery.js' %}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!--<script src="js/bootstrap.min.js"></script>-->
+<script src="{% static 'home/js/bootstrap.min.js' %}"></script>
+
+<!-- Scrolling Nav JavaScript -->
+<!--<script src="js/jquery.easing.min.js"></script>-->
+<!--<script src="js/scrolling-nav.js"></script>-->
+<script src="{% static 'home/js/jquery.easing.min.js' %}"></script>
+<script src="{% static 'home/js/scrolling-nav.js' %}"></script>
+</body>
+
+</html>
